@@ -9,7 +9,7 @@ def main_menu():
     while True:
         print("\n[ 주요 메뉴 ]")
         print('0. 프로그램 설명')
-        print("1. 현재 시간")
+        print("1. 현재 날짜 및 시간")
         print("2. 계산기")
         print("3. txt 파일 생성")
         print("4. 시스템 정보")
