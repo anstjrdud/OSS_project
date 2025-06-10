@@ -55,6 +55,10 @@ requests
 
 2. 만약 게임을 선택했다면, 어떤 게임을 할 것인지 숫자로 입력해서 선택합니다. B를 입력했다면 기능 메뉴로 돌아갑니다.
 
+![화면 캡처 2025-06-11 015308](https://github.com/user-attachments/assets/886680a5-7480-468e-924e-8da4837b30db)
+
+3. Q를 입력한다면, 다음과 같이 출력되어 완전히 종료됩니다.
+
 #### 기능
 ##### 프로그램 설명
 ![화면 캡처 2025-06-11 012042](https://github.com/user-attachments/assets/52f9560e-9317-4868-83b2-673e0954fbe8)
@@ -123,7 +127,7 @@ txt 파일의 내용을 요약해서 출력합니다.
 
 #### 게임
 ##### 숫자 맞추기
-![화면 캡처 2025-06-11 010358](https://github.com/user-attachments/assets/4fb128b2-e89d-434c-b489-2f52d890116b)
+![화면 캡처 2025-06-11 015041](https://github.com/user-attachments/assets/87301b84-e1f9-4093-ad20-d3c6b76e0723)
 
 임의의 숫자를 사용자가 추측하여 맞추는 게임입니다.
 ##### 가위바위보
@@ -135,7 +139,7 @@ txt 파일의 내용을 요약해서 출력합니다.
 
 제시된 단어를 얼마나 빨리 거꾸로 입력하는지 내기할 수 있습니다.
 ##### 틱택토
-![화면 캡처 2025-06-11 011110](https://github.com/user-attachments/assets/1cf1afe0-cde2-4007-b414-cbc7bd3f4807)
+![화면 캡처 2025-06-11 015115](https://github.com/user-attachments/assets/7b40380f-37fc-4fe2-831f-8c6fb26fa9a9)
 
 3 x 3 판에서 누가 먼저 빙고를 하는지 내기합니다.
 ##### 행맨 (Hangman)
@@ -143,7 +147,7 @@ txt 파일의 내용을 요약해서 출력합니다.
 
 철자를 추측하고 입력해서 단어를 맞춥니다.
 ##### 메모리 카드 맞추기
-![화면 캡처 2025-06-11 011505](https://github.com/user-attachments/assets/fe99b655-c0c8-448c-8ccd-0e63d4e3d0fa)
+![화면 캡처 2025-06-11 015155](https://github.com/user-attachments/assets/bc655945-a9b8-4ca0-b57b-94495e065129)
 
 4 x 4 판의 16개의 카드에서 8개의 짝을 맞추는 게임입니다.
 ##### 동전 던지기
