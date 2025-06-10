@@ -1,7 +1,7 @@
-# OSS_project
+# GitHub_project
 2243807 - 문석영
 
-OSS개발 SW 프로젝트입니다.
+OSS개발 GitHub 프로젝트입니다.
 
 ## SW 소개 및 목적
 이 SW는 시간 확인 및 간단한 텍스트 파일 생성 기능과 같은 편의기능 뿐만 아니라,
@@ -43,6 +43,7 @@ requests
 프로그래밍 언어 : Python
 
 ### 실행 방법 및 기능 설명
+0. 본 SW는 main.py에서 실행합니다.
 #### 메뉴 선택
 ![화면 캡처 2025-06-11 000656](https://github.com/user-attachments/assets/784e4603-8f11-44f8-a77a-d35df7b133a2)
 
