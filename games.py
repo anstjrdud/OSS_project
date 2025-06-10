@@ -49,6 +49,8 @@ def game_b():
 
 def game_c():
     import random
+    import time  # ⬅ 시간 측정을 위한 모듈
+
     print("단어 뒤집기 게임! 제시된 단어를 거꾸로 입력하세요.")
 
     words = [
@@ -61,12 +63,20 @@ def game_c():
     reversed_word = word[::-1]
 
     print(f"단어: {word}")
+    
+    start_time = time.time()  # ⬅ 입력 시작 시간
     answer = input("거꾸로 단어를 입력하세요: ")
+    end_time = time.time()    # ⬅ 입력 종료 시간
+
+    elapsed_time = end_time - start_time
 
     if answer == reversed_word:
         print("정답입니다!")
     else:
         print(f"틀렸습니다! 정답은 {reversed_word}입니다.")
+
+    print(f"입력 시간: {elapsed_time:.2f}초")
+
 
 
 # tic_tac_toe()   
@@ -95,7 +105,7 @@ def game_d():
         print_board(board)
         row = int(input(f"{turn}'s turn - Row (0-2): "))
         col = int(input("Col (0-2): "))
-        if board[row][col] != " ":
+        if board[row][col] != " " or col < 0 or col > 2 or row < 0 or row > 2:
             print("잘못된 좌표입니다. 다시 해주세요.")
             continue
         board[row][col] = turn
