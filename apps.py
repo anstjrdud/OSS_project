@@ -170,16 +170,20 @@ def summarize_text(text, num_sentences=3):
     summary_sentences = sorted(sentence_scores, key=sentence_scores.get, reverse=True)[:num_sentences]
     return ' '.join(summary_sentences)
 
-
-
 def run_feature_e():
-    file_path = input('요약할 텍스트 파일의 이름을 입력하십시오. (.txt 확장명 포함할 것) :')
+    while True:
+        file_path = input('요약할 텍스트 파일의 이름을 입력하십시오. (.txt 확장명 포함할 것) :')
 
-    # 파일 읽기
-    with open(file_path, 'r', encoding='utf-8') as f:
-        text = f.read()
+        if not os.path.exists(file_path):
+            print("파일이 존재하지 않습니다. 다시 입력해 주세요.\n")
+            continue
 
-    print("요약 결과:")
-    print(summarize_text(text))
-    input("엔터를 누르면 메뉴로 돌아갑니다.")
-    clear_screen()
+        # 파일 읽기
+        with open(file_path, 'r', encoding='utf-8') as f:
+            text = f.read()
+
+        print("요약 결과:")
+        print(summarize_text(text))
+        input("엔터를 누르면 메뉴로 돌아갑니다.")
+        clear_screen()
+        break
