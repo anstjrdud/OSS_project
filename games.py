@@ -1,13 +1,19 @@
 from system import *
 from imports import *
 
+import random
+
 def game_a():
     number = random.randint(1, 100)
     attempts = 0
     print("숫자 맞추기 게임! 1부터 100 사이 숫자를 맞춰보세요.")
+    print("종료하려면 'q'를 입력하세요.")
 
     while True:
-        guess = input("숫자를 입력하세요: ")
+        guess = input("숫자를 입력하세요 (또는 'q' 입력 시 종료): ")
+        if guess.lower() == 'q':
+            print("게임을 종료합니다.")
+            break
         if not guess.isdigit():
             print("숫자를 입력해주세요.")
             continue
@@ -21,6 +27,7 @@ def game_a():
         else:
             print(f"정답입니다! 시도 횟수: {attempts}번")
             break
+
 
 def game_b():
     choices = ['가위', '바위', '보']
@@ -103,18 +110,41 @@ def game_d():
 
     for _ in range(9):
         print_board(board)
-        row = int(input(f"{turn}'s turn - Row (0-2): "))
-        col = int(input("Col (0-2): "))
-        if board[row][col] != " " or col < 0 or col > 2 or row < 0 or row > 2:
-            print("잘못된 좌표입니다. 다시 해주세요.")
+        
+        row_input = input(f"{turn}'s turn - Row (0-2) 또는 'q' 입력 시 종료: ")
+        if row_input.lower() == 'q':
+            print("게임을 종료합니다.")
+            return
+        col_input = input("Col (0-2) 또는 'q' 입력 시 종료: ")
+        if col_input.lower() == 'q':
+            print("게임을 종료합니다.")
+            return
+
+        try:
+            row = int(row_input)
+            col = int(col_input)
+        except ValueError:
+            print("숫자를 입력하세요.")
             continue
+
+        if not (0 <= row <= 2 and 0 <= col <= 2):
+            print("잘못된 좌표입니다. 0~2 사이의 값을 입력하세요.")
+            continue
+
+        if board[row][col] != " ":
+            print("이미 채워진 칸입니다. 다시 선택하세요.")
+            continue
+
         board[row][col] = turn
         if check_win(board, turn):
             print_board(board)
             print(f"{turn} wins!")
             return
+
         turn = "O" if turn == "X" else "X"
+
     print("무승부입니다!")
+
 
 def game_e():
     import random
@@ -148,6 +178,9 @@ def game_e():
     print("졌습니다! 정답:", word)
 
 
+import random
+import time
+
 def game_f():
     symbols = ['🍎', '🍌', '🍇', '🍒', '🍍', '🥝', '🍓', '🍉'] * 2  # 총 16개
     random.shuffle(symbols)
@@ -165,8 +198,18 @@ def game_f():
     while not all(matched):
         show_board()
         try:
-            first = int(input("첫 번째 카드 번호(0~15): "))
-            second = int(input("두 번째 카드 번호(0~15): "))
+            first_input = input("첫 번째 카드 번호(0~15) 또는 'q' 입력 시 종료: ")
+            if first_input.lower() == 'q':
+                print("게임을 종료합니다.")
+                return
+            first = int(first_input)
+
+            second_input = input("두 번째 카드 번호(0~15) 또는 'q' 입력 시 종료: ")
+            if second_input.lower() == 'q':
+                print("게임을 종료합니다.")
+                return
+            second = int(second_input)
+
             if first == second or not (0 <= first < 16) or not (0 <= second < 16):
                 print("잘못된 선택입니다. 범위를 확인하세요.")
                 continue
@@ -185,7 +228,9 @@ def game_f():
             print("숫자를 입력하세요.")
         except IndexError:
             print("0부터 15 사이의 숫자를 입력하세요.")
+
     print("🎉 모든 카드를 맞췄습니다!")
+
 
 def game_g():
     choice = input("앞(Heads) 또는 뒤(Tails)를 고르세요 (h/t): ").lower()
